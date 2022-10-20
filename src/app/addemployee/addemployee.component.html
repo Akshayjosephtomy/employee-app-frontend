@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row g-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"><br>
+            <h4>Add Flight</h4>
+
+            <div class="row g-3">
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">Name</label>
+                    <input type="text" placeholder="name" class="form-control" name="name" [(ngModel)]="name">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">Employee Code</label>
+                    <input type="text" placeholder="employee code" class="form-control" name="code" [(ngModel)]="code">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label class="form-label">Address</label>
+                    <textarea name="address" id="" cols="15" rows="4" class="form-control" [(ngModel)]="address"></textarea>
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">DOB</label>
+                    <input type="date" placeholder="dob" class="form-control" name="dob" [(ngModel)]="dob">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">Phone</label>
+                    <input type="text" placeholder="phone" class="form-control" name="phone" [(ngModel)]="phone">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">Salary</label>
+                    <input type="text" placeholder="salary" class="form-control" name="salary" [(ngModel)]="salary">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label class="form-label">Company</label>
+                    <input type="text" placeholder="company" class="form-control" name="company" [(ngModel)]="company">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <button class="btn btn-success" (click)="readvalue()" [disabled]="status">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
