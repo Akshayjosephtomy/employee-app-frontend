@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-Success navbar-dark">
+<nav class="navbar navbar-expand-lg bg-success navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"> Employee App</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,3 +24,49 @@
       </div>
     </div>
   </nav>
+
+
+
+
+
+  
+
+  <!--
+    @Modifying
+  @Query(value = "DELETE FROM `employees` WHERE `id`= :id",nativeQuery = true)
+  void deleteEmployeeById(Integer id);
+
+  @Query(value = "SELECT `id`, `address`, `code`, `company`, `dob`, `name`, `phone`, `salary` FROM `employees` WHERE `name` LIKE :%name%",nativeQuery = true)
+  List<EmployeeModel>searchEmployee(String name);
+
+    @Autowired
+    private EmployeeDao dao;
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/addemployee",consumes = "application/json",produces = "application/json")
+    private String addEmployee(@RequestBody EmployeeModel employee){
+        System.out.println(employee.toString());
+        dao.save(employee);
+        return "(status:'success')";
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/viewemployee")
+    public List<EmployeeModel> viewEmployee(){
+        return (List<EmployeeModel>) dao.findAll();
+    }
+
+    @CrossOrigin(origins = "*")
+    @Transactional
+    @PostMapping(path = "/deleteemployee",consumes = "application/json",produces = "application/json")
+    public String deleteEmployee(@RequestBody EmployeeModel employee){
+        dao.deleteEmployeeById(employee.getId());
+        return "(status:'success')";
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/searchemployee",consumes = "application/json",produces = "application/json")
+    public List<EmployeeModel> searchEmployee(@RequestBody EmployeeModel employee){
+        return (List<EmployeeModel>) dao.searchEmployee(employee.getName());
+    }
+-->

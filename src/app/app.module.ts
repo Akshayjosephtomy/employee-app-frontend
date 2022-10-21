@@ -7,19 +7,29 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ViewallemployeeComponent } from './viewallemployee/viewallemployee.component';
+import { SearchemployeeComponent } from './searchemployee/searchemployee.component'
 
 
 const link:Routes=[
   {
     path:"",component:AddemployeeComponent
+  },
+  {
+    path:"view",component:ViewallemployeeComponent
+  },
+  {
+    path:"search",component:SearchemployeeComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    ViewallemployeeComponent,
+    SearchemployeeComponent
   ],
   imports: [
     BrowserModule,
